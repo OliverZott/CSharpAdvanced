@@ -47,6 +47,7 @@ namespace Generics
     }
 
 
+    // struct for value-types as constraint
     public class Nullable<T> where T : struct
     {
 
