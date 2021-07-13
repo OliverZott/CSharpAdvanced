@@ -40,3 +40,26 @@ The answer is, the the delegate call will skip the call to any subsequent method
 
 **What if you want to skip only the method that has thrown the exception?**
 You can get the list of methods added to the delegate by calling GetInvocationList() which can be iterated through, and you can deal with the exception between the calls. 
+
+
+
+
+
+-----------------------------------------------------------------------------------------
+# Lamba Expressions
+
+- Compact functions
+- Use in...
+  - LINQ (Enumerable static methods like `Where()`)
+  - Collection (List) methods like `FindAll()`
+  - As **Predicate Delegate ** 
+    https://www.tutorialsteacher.com/csharp/csharp-predicate
+
+
+
+    
+
+-----------------------------------------------------------------------------------------
+# Events
+
+- 
