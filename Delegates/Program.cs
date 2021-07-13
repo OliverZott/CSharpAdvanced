@@ -6,10 +6,27 @@ namespace Delegates
     {
         static void Main(string[] args)
         {
-            var photo = new Photo();
             var photoProcessor = new PhotoProcessor();
+            var filters = new PhotoFilter();
 
-            photoProcessor.Process("test");
+            // Example with custom delegate
+            PhotoProcessor.PhotoFilterHandler filterHandler = filters.ApplyBrightness;
+            filterHandler += filters.Resize;
+            filterHandler += RemoveRedEyeFilter;
+
+            photoProcessor.Process("test", filterHandler);
+
+            // Example with Action
+            photoProcessor.AdvancedProcess("teeest", photo => Console.WriteLine("Lambda expression."));
+            //photoProcessor.AdvancedProcess("teeest", filterHandler));
+
+        }
+
+
+        // create custom filter function to be used with delegate
+        public static void RemoveRedEyeFilter(Photo photo)
+        {
+            Console.WriteLine("Removing red eyes.");
         }
     }
 }
