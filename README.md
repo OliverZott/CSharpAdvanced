@@ -68,6 +68,13 @@ You can get the list of methods added to the delegate by calling GetInvocationLi
 - **EventHander** (`OnFunctionName()`) is called in the subscribers by the publisher, when event is raised. 
 
 ## Implementation
-1. Define a delegate. Convention: `MethodnameEventHandler()`
-2. Define an event based on the delegate.
-3. Raise the event. Convention: `protected virtual void OnEventname()`
+1. ( Define a delegate. Convention: `MethodnameEventHandler()` or use default `EventHandler<TArgs>` or `EventHandler` )
+2. Define an event based on the delegate or just standard EventHandler
+3. Raise the event. Convention: `protected virtual void OnEventname()`7
+4. Create Subscriber Services
+5. Create subscription (rhs) according to event we are interested in (lhs)
+
+## Event Args 
+- Implement custom event argument class to pass additional arguments
+
+
