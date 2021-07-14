@@ -78,3 +78,23 @@ You can get the list of methods added to the delegate by calling GetInvocationLi
 - Implement custom event argument class to pass additional arguments
 
 
+
+
+
+-----------------------------------------------------------------------------------------
+# Extension Methods
+- Add methods to class without extending the class 
+- Extension classes are **public static**
+- Naming Convention: `ClassnameExtension`
+
+
+
+
+
+
+
+
+
+
+
+
