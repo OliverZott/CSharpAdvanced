@@ -62,4 +62,12 @@ You can get the list of methods added to the delegate by calling GetInvocationLi
 -----------------------------------------------------------------------------------------
 # Events
 
-- 
+- Reduce coupling by using **Publisher** and **Subscriber**, which don't know anything about each other!
+- Publisher needs to invoke method in the subscribers 
+- Therefore we need agreement/contract between publisher and subscriber -> **Delegate** determines signature of  **EventHandler**.
+- **EventHander** (`OnFunctionName()`) is called in the subscribers by the publisher, when event is raised. 
+
+## Implementation
+1. Define a delegate. Convention: `MethodnameEventHandler()`
+2. Define an event based on the delegate.
+3. Raise the event. Convention: `protected virtual void OnEventname()`
