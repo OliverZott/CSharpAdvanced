@@ -11,6 +11,8 @@
 
 
 
+
+
 -----------------------------------------------------------------------------------------
 # Delegates
 
@@ -111,3 +113,50 @@ You can get the list of methods added to the delegate by calling GetInvocationLi
 - Value Types cannot be null
 - Sometimes wanna have null (e.g. Birthday in a database)
 - Null-Coalescing operator
+
+
+
+
+
+-----------------------------------------------------------------------------------------
+# Dynamic
+
+- Static typed languages
+   - type resolution at **compile-time**
+   - therefore earlier feedback
+- Dynamic typed  languages
+   - type resolution at **runtime**
+   - more unit-tests needed for feedback
+   - but easier and faster to code
+- .NET4 added dynamic capability 
+
+### dynamic
+- **dynamic** easier then use reflection
+- same as **object** type
+- flexibility comes at cost of performance 
+- unlike *object* the value stored in the variable can have it's members invoked WITHOUT explicit cast!
+
+### Reflection
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/reflection
+- reflection is way to inspect the meta-data about the type and access properties and methods!
+
+### How resolve types/properties/members at runtime?
+- **CLR** - *Common Language Runtime* is .NETs virtual machine ...
+- ... that gets compiled code (**IL** - *Intermediate Language*) ...
+- ... and converts that into machine-code at **run-time**
+- **DLR** sits on top of **CLR** and gives the dynamic capability
+
+
+
+
+
+-----------------------------------------------------------------------------------------
+# Exception handling
+
+
+
+
+
+
+
+
