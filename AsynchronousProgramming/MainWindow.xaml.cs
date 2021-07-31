@@ -19,7 +19,10 @@ namespace AsynchronousProgramming
         {
             // DownloadHtmlAsync("https://www.google.com/");   // first async example
 
-            var html = await GetHtmlAsync("https://www.google.com/");
+            var getHtmlTask = GetHtmlAsync("https://www.google.com/");  // Task object representing state of async operation!
+            MessageBox.Show("Waiting for async stuff :)");  // We dont have to wait until async stuff is finished.
+
+            var html = await getHtmlTask;
             MessageBox.Show(html.Substring(0, 10));
         }
 
