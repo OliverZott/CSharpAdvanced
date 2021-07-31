@@ -83,6 +83,7 @@ You can get the list of methods added to the delegate by calling GetInvocationLi
 
 -----------------------------------------------------------------------------------------
 # Extension Methods
+
 - Add methods to class without extending the class 
 - Extension classes are **public static**
 - Naming Convention: `ClassnameExtension`
@@ -91,10 +92,20 @@ You can get the list of methods added to the delegate by calling GetInvocationLi
 
 
 
+-----------------------------------------------------------------------------------------
+# LINQ
+
+- Gives the capability to query objects!
+  - objects in memory (e.g. collections -> Linq to object)
+  - databases
+  - xml
+  - ADO.NET data sets 
 
 
 
 
 
+-----------------------------------------------------------------------------------------
+# Nullable Types
 
-
+- 
