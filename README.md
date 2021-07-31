@@ -108,4 +108,6 @@ You can get the list of methods added to the delegate by calling GetInvocationLi
 -----------------------------------------------------------------------------------------
 # Nullable Types
 
-- 
+- Value Types cannot be null
+- Sometimes wanna have null (e.g. Birthday in a database)
+- Null-Coalescing operator
