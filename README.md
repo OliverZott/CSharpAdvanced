@@ -137,7 +137,9 @@ You can get the list of methods added to the delegate by calling GetInvocationLi
 - unlike *object* the value stored in the variable can have it's members invoked WITHOUT explicit cast!
 
 ### Reflection
+
 https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/reflection
+
 - reflection is way to inspect the meta-data about the type and access properties and methods!
 
 ### How resolve types/properties/members at runtime?
@@ -153,10 +155,15 @@ https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/reflec
 -----------------------------------------------------------------------------------------
 # Exception handling
 
+- catch-block:
+  - recover from error and prevent application from crashing
+  - **re-throw** error to the **caller**
 
 
-
-
-
-
-
+### GUIDELINE
+- Always have global exception handling block in application (e.g. Main method in console application)
+- Catch exception specifically! 
+- Finally block used for managed resources (not managed by CLR --> No garbage collection applied by CLR
+  - Better: **using** statement!
+- **Custom Exceptions** if special exception handling is needed (e.g. default videos if smth in video-service goes wrong)
+  - Uses inner exceptions --> often in EntityFramework database stuff!
