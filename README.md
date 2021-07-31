@@ -167,3 +167,31 @@ https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/reflec
   - Better: **using** statement!
 - **Custom Exceptions** if special exception handling is needed (e.g. default videos if smth in video-service goes wrong)
   - Uses inner exceptions --> often in EntityFramework database stuff!
+
+
+
+
+
+  -----------------------------------------------------------------------------------------
+# Asynchronous Programming
+
+- used for blocking operations:
+  - web accesses
+  - databases
+  - images
+
+### How?
+- Traditional approaches
+  - Multi-threading
+  - Callbacks
+- New approach since NET 4.5
+  - *Task-based*
+  - **Async** / **Await**
+
+
+
+
+
+
+
+
