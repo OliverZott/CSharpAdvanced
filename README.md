@@ -187,8 +187,9 @@ https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/reflec
 - New approach since NET 4.5
   - *Task-based*
   - **Async** / **Await**
-
-
+- Keyword **async**
+  - Naming Covention: Afix **MethodNameAsync()**
+- Return Type: **Task** object encapsulates state of an asynchronous operation 
 
 
 

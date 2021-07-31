@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Net;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace AsynchronousProgramming
@@ -14,10 +15,33 @@ namespace AsynchronousProgramming
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            DownloadHtml("https://www.google.com/");
+            // DownloadHtmlAsync("https://www.google.com/");   // first async example
+
+            var html = await GetHtmlAsync("https://www.google.com/");
+            MessageBox.Show(html.Substring(0, 10));
         }
+
+
+        // generic /nongeneric versions <>
+        // annotate blocking operation: affix async
+        private async Task DownloadHtmlAsync(string url)
+        {
+            var webClient = new WebClient();
+
+            // blocking method -> async version 
+            var html = await webClient.DownloadStringTaskAsync(url);  // 'await' is marker for compiler so compiler continues!
+            // if runtime is compilted it continues here!
+
+            await using var streamWriter = new StreamWriter("result.html");
+            {
+                // blocking method -> async version 
+                await streamWriter.WriteAsync(html);
+            }
+
+        }
+
 
         private void DownloadHtml(string url)
         {
@@ -27,6 +51,21 @@ namespace AsynchronousProgramming
             // write url response to disk
             using var streamWriter = new StreamWriter("result.html");
             streamWriter.Write(html);
+        }
+
+
+        // Example 2 - NOT async
+        private string GetHtml(string url)
+        {
+            var webClient = new WebClient();
+            return webClient.DownloadString(url);
+        }
+
+        // Example 2 - async
+        private async Task<string> GetHtmlAsync(string url)
+        {
+            var webClient = new WebClient();
+            return await webClient.DownloadStringTaskAsync(url);
         }
     }
 }
